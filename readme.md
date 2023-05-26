@@ -1,3 +1,11 @@
+![npm type definitions](https://img.shields.io/npm/types/git-cz-commitlint)
+![npm](https://img.shields.io/npm/v/git-cz-commitlint)
+![NPM](https://img.shields.io/npm/l/git-cz-commitlint)
+![npm](https://img.shields.io/npm/dw/git-cz-commitlint)
+![GitHub last commit](https://img.shields.io/github/last-commit/yantaolu/git-cz-commitlint)
+
+---
+
 # git-cz-commitlint
 
 Adapter for [commitizen](http://commitizen.github.io/cz-cli/) and author commit messages that adhere to the commit convention configured in `commitlint.config.js`.
@@ -83,5 +91,5 @@ module.exports = {
 };
 ```
 
-![img.png](img.png)
+![img.png](https://github.com/yantaolu/git-cz-commitlint/blob/main/img.png?raw=true)
 
