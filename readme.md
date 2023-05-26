@@ -81,5 +81,5 @@ module.exports = {
 };
 ```
 
-![img.png](https://github.com/yantaolu/git-cz-commitlint/blob/main/img.png?raw=true)
+![img.png](https://raw.githubusercontent.com/yantaolu/git-cz-commitlint/main/img.png)
 
