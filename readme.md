@@ -1,12 +1,12 @@
-![npm type definitions](https://img.shields.io/npm/types/git-cz-commitlint)
-![npm](https://img.shields.io/npm/v/git-cz-commitlint)
-![NPM](https://img.shields.io/npm/l/git-cz-commitlint)
-![npm](https://img.shields.io/npm/dw/git-cz-commitlint)
+![npm type definitions](https://img.shields.io/npm/types/@handy-js/git-cz)
+![npm](https://img.shields.io/npm/v/@handy-js/git-cz)
+![NPM](https://img.shields.io/npm/l/@handy-js/git-cz)
+![npm](https://img.shields.io/npm/dw/@handy-js/git-cz)
 ![GitHub last commit](https://img.shields.io/github/last-commit/yantaolu/git-cz-commitlint)
 
 ---
 
-# git-cz-commitlint
+# @handy-js/git-cz
 
 Adapter for [commitizen](http://commitizen.github.io/cz-cli/) and author commit messages that adhere to the commit convention configured in `commitlint.config.js`.
 
@@ -25,19 +25,19 @@ $ npm install commitizen inquirer@8 --save-dev
 ## Install
 
 ```
-$ npm install git-cz-commitlint --save-dev
+$ npm install @handy-js/git-cz --save-dev
 ```
 
 or
 
 ```
-$ yarn add git-cz-commitlint -D
+$ yarn add @handy-js/git-cz -D
 ```
 
 or
 
 ```
-$ pnpm add git-cz-commitlint -D
+$ pnpm add @handy-js/git-cz -D
 ```
 
 ## Config `commitizen` in `package.json`
@@ -45,7 +45,7 @@ $ pnpm add git-cz-commitlint -D
 {
   "config": {
     "commitizen": {
-      "path": "git-cz-commitlint"
+      "path": "@handy-js/git-cz"
     }
   }
 }
@@ -58,7 +58,7 @@ You can provide a custom configuration in a `commitlint` config file like `commi
 ```js
 module.exports = {
   // original commitlint config
-  extends: ['git-cz-commitlint/lib/config'],
+  extends: ['@handy-js/git-cz/lib/config'],
 
   // extra config
   format: '{type}{scope}: {emoji}{subject}', // => 'fix(scope): 🐛 fix xxx'
