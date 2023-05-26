@@ -12,21 +12,14 @@ Adapter for [commitizen](http://commitizen.github.io/cz-cli/) and author commit 
 
 ## [Install commitlint](https://commitlint.js.org/#/guides-local-setup)
 
+```
+$ npm install @commitlint/cli --save-dev
+```
+
 ## Install peer Dependencies
 
 ```
 $ npm install commitizen inquirer@8 --save-dev
-```
-
-## Config commitizen in `package.json`
-```json
-{
-  "config": {
-    "commitizen": {
-      "path": "git-cz-commitlint"
-    }
-  }
-}
 ```
 
 ## Install
@@ -47,6 +40,17 @@ or
 $ pnpm add git-cz-commitlint -D
 ```
 
+## Config `commitizen` in `package.json`
+```json
+{
+  "config": {
+    "commitizen": {
+      "path": "git-cz-commitlint"
+    }
+  }
+}
+```
+
 ## Custom config
 
 You can provide a custom configuration in a `commitlint` config file like `commitlint.config.js`.
@@ -54,7 +58,7 @@ You can provide a custom configuration in a `commitlint` config file like `commi
 ```js
 module.exports = {
   // original commitlint config
-  extends: ['@commitlint/config-conventional'],
+  extends: ['git-cz-commitlint/lib/config'],
 
   // extra config
   format: '{type}{scope}: {emoji}{subject}', // => 'fix(scope): 🐛 fix xxx'
@@ -64,20 +68,6 @@ module.exports = {
   scopes: [],
   // enable emoji
   useEmoji: true,
-  // type emoji
-  emojis: {
-    feat: '✏️',
-    style: '🪄',
-    revert: '👈',
-    fix: '🐛',
-    docs: '📚',
-    refactor: '📦',
-    perf: '🚀',
-    test: '🚨',
-    build: '🛠',
-    ci: '⚙️',
-    chore: '♻️',
-  },
   // if rule can skip
   skips: ['scope'],
   // custom question description

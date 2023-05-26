@@ -67,7 +67,7 @@ export interface CzCommitConfig {
   skips: ('header' | 'scope' | 'body' | 'footer' | 'breaking' | 'issues')[];
 }
 
-export type CommitLintConfig = UserConfig & Partial<CzCommitConfig>;
+export type CommitLintConfig = UserConfig & Partial<Omit<CzCommitConfig, 'emojis'>>;
 
 export default async function load(
   seed: CommitLintConfig = {},
@@ -118,21 +118,11 @@ export default async function load(
     types: config.types || [],
     scopes: config.scopes || [],
     useEmoji: config.useEmoji ?? true,
-    emojis: { feat: '✏️', style: '🪄', revert: '👈', ...config.emojis },
+    emojis: {},
     typeEnumDescriptions: { ...config.typeEnumDescriptions },
     questionDescriptions: { ...config.questionDescriptions } as CzCommitConfig['questionDescriptions'],
     skips: config.skips || [],
   };
-
-  // modify config.emojis
-  if (config.prompt?.questions?.type?.enum) {
-    for (const enumKey in config.prompt?.questions?.type?.enum) {
-      const item = config.prompt?.questions?.type?.enum[enumKey];
-      if (item?.emoji) {
-        czCommitConfig.emojis[enumKey] = item?.emoji;
-      }
-    }
-  }
 
   // Resolve extends key
   const extended = resolveExtends(config, {

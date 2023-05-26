@@ -11,7 +11,6 @@ export type { CommitLintConfig };
  */
 export function prompter(_: any, commit: (message: string) => void): void {
   load().then(({ rules, prompt = {}, czCommitConfig }) => {
-    // console.log(czCommitConfig);
     process(rules, prompt, czCommitConfig).then(commit);
   });
 }

@@ -28,7 +28,7 @@ export default function (rulePrefix: RuleField, useEmoji?: boolean): QuestionCon
 
   const canBeSkip = !emptyRule || ruleIsDisabled(emptyRule);
 
-  // 配置可以跳过
+  // can skip and in skips
   if (canBeSkip && getCzCommitConfig().skips.includes(rulePrefix as any)) {
     return null;
   }
@@ -43,7 +43,7 @@ export default function (rulePrefix: RuleField, useEmoji?: boolean): QuestionCon
     if (enumDescriptions) {
       // const enumNames = Object.keys(enumDescriptions);
       const longest = Math.max(...enumRuleList.map((enumName) => enumName.length)) + (useEmoji ? 6 : 4);
-      // TODO emoji + title
+      // TODO title
       enumList = enumRuleList
         // .sort((a, b) => enumNames.indexOf(a) - enumNames.indexOf(b))
         .map((enumName) => {
@@ -51,16 +51,23 @@ export default function (rulePrefix: RuleField, useEmoji?: boolean): QuestionCon
           if (enumDescription) {
             const emoji = useEmoji ? enumDescriptions[enumName]?.emoji ?? '' : '';
             const title = enumDescriptions[enumName]?.title ?? enumName;
+
+            const name = (
+              `${emoji} ${enumName}:`.trim().padEnd(longest) +
+              (getCzCommitConfig().typeEnumDescriptions[enumName] ?? enumDescription)
+            )
+              .split('\n')
+              .map((line, index) => (index === 0 ? line : ' '.repeat(longest + 2) + line))
+              .join('\n');
+
             return {
-              name:
-                `${emoji} ${enumName}:`.trim().padEnd(longest) +
-                (getCzCommitConfig().typeEnumDescriptions[enumName] ?? enumDescription),
+              name,
               value: enumName,
               short: enumName,
               title,
             };
           } else {
-            return enumName;
+            return { name: enumName, value: enumName, short: enumName, title: enumName };
           }
         });
     } else {

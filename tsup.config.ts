@@ -3,7 +3,10 @@ import { defineConfig } from 'tsup';
 export default defineConfig((options) => {
   return [
     {
-      entry: ['src/index.ts'],
+      entry: {
+        index: 'src/index.ts',
+        config: 'src/config/index.ts',
+      },
       outDir: 'lib',
       sourcemap: false,
       clean: true,
