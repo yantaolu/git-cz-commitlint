@@ -1,0 +1,31 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "target": "es6",
+    "lib": ["ESNext"],
+    "module": "ESNext",
+    "rootDir": "./",
+    "moduleResolution": "Node",
+    "paths": {
+      "react-router-decorator": ["./src/index.tsx"]
+    },
+    "resolveJsonModule": true,
+    "allowArbitraryExtensions": true,
+    "allowJs": true,
+    "checkJs": true,
+    "downlevelIteration": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "useUnknownInCatchVariables": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "exactOptionalPropertyTypes": false,
+    "noImplicitReturns": true,
+    "skipLibCheck": false
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "lib", "commitlint.config.js"]
+}

@@ -1,0 +1,11 @@
+# 忽略目录
+dist/
+build/
+scripts/
+src/3rd-party/
+src/assets/
+node_modules/
+
+# 忽略文件
+build.config.js
+package-lock.json
