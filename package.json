@@ -1,7 +1,7 @@
 {
   "name": "git-cz-commitlint",
   "version": "0.0.1",
-  "description": "Commitizen adapter like `git-cz` using the commitlint.config.js",
+  "description": "Commitizen adapter like `git-cz` using the `commitlint.config.js`",
   "keywords": [
     "conventional-changelog",
     "commitlint",

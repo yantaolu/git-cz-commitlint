@@ -1,7 +1,5 @@
 import { QualifiedRules, UserPromptConfig } from '@commitlint/types';
-import * as console from 'console';
 import inquirer from 'inquirer';
-import * as process from 'process';
 import { combineCommitMessage as combineBody, getQuestions as getBodyQuestions } from './SectionBody';
 import { combineCommitMessage as combineFooter, getQuestions as getFooterQuestions } from './SectionFooter';
 import { combineCommitMessage as combineHeader, getQuestions as getHeaderQuestions } from './SectionHeader';
@@ -28,7 +26,5 @@ export default async function (
 
   const msg = [header, body, footer].filter(Boolean).join('\n');
 
-  console.log(msg);
-  process.exit();
   return msg;
 }
