@@ -1,6 +1,6 @@
 {
   "name": "@handy-js/git-cz",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Commitizen adapter like `git-cz` using the `commitlint.config.js`",
   "keywords": [
     "conventional-changelog",
